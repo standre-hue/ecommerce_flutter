@@ -1,4 +1,5 @@
 import 'package:ecommerce/constances.dart';
+import 'package:ecommerce/screens/store_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -92,7 +93,10 @@ const StoreCard({ Key? key }) : super(key: key);
               )
             ),
             onPressed: (){
-
+              Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => StoreScreen()));
           }, child: Container(
             
             child: Center(child: Text("Visit Store", style: TextStyle(color:Colors.white, fontWeight: FontWeight.bold),))))

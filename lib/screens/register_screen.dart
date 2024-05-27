@@ -184,7 +184,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     shape: BeveledRectangleBorder(),
                     padding: EdgeInsets.only(left:40, right: 40)
                   ),
-                  onPressed: _enabled ? (){} : null, child: Text("Sign Up",style: TextStyle(fontSize: 20, color: Colors.white),)),
+                  onPressed: _enabled ? (){
+                    Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginScreen()));
+                  } : null, child: const Text("Sign Up",style: TextStyle(fontSize: 20, color: Colors.white),)),
 
                 const SizedBox(
                   height: 20,

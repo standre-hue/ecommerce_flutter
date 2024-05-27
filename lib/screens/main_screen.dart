@@ -35,9 +35,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
         key: _key,
         endDrawerEnableOpenDragGesture: false,
-        endDrawer: MyDrawer(),
-        drawer: MyDrawer(
-          ),
+        drawer: MyDrawer(),
         appBar: AppBar(
           leading: SizedBox(
               height: 50,
@@ -51,7 +49,8 @@ class _MainScreenState extends State<MainScreen> {
                   //print(_key.currentState == null);
                   _key.currentState!.openDrawer();
                 },
-                icon: Icon(Icons.menu, color: Colors.grey)),
+                icon: Icon(Icons.menu, color: Colors.grey)
+                ),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(

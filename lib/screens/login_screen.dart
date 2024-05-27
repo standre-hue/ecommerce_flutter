@@ -1,4 +1,6 @@
 import 'package:ecommerce/constances.dart';
+import 'package:ecommerce/screens/main_screen.dart';
+import 'package:ecommerce/screens/otp_screen.dart';
 import 'package:ecommerce/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -158,7 +160,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       backgroundColor: primaryColor,
                       shape: BeveledRectangleBorder(),
                       padding: EdgeInsets.only(left: 40, right: 40)),
-                  onPressed: _enabled ? () {} : null,
+                  onPressed: _enabled ? () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OtpScreen()));
+                  } : null,
                   child: Text(
                     "Login",
                     style: TextStyle(fontSize: 20, color: Colors.white),

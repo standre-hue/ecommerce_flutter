@@ -4,11 +4,12 @@ import 'package:ecommerce/constances.dart';
 import 'package:ecommerce/data/product.dart';
 import 'package:ecommerce/screens/utils.dart';
 import 'package:ecommerce/widgets/my_drawer.dart';
+import 'package:ecommerce/widgets/product_card.dart';
 import 'package:ecommerce/widgets/review_card.dart';
 import 'package:ecommerce/widgets/store_card.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetailScreen extends StatefulWidget  {
+class ProductDetailScreen extends StatefulWidget {
   int productId;
   ProductDetailScreen({Key? key, required this.productId}) : super(key: key);
 
@@ -16,7 +17,8 @@ class ProductDetailScreen extends StatefulWidget  {
   _ProductDetailScreenState createState() => _ProductDetailScreenState();
 }
 
-class _ProductDetailScreenState extends State<ProductDetailScreen> with SingleTickerProviderStateMixin {
+class _ProductDetailScreenState extends State<ProductDetailScreen>
+    with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _key = new GlobalKey<ScaffoldState>();
 
   bool isLoading = true;
@@ -27,8 +29,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> with SingleTi
   final _scrollController = TrackingScrollController();
   late TabController
       _tabController; //= TabController(length: 2, vsync: AnimatedListState(), );
-
-  
 
   void _loadProduct() {
     try {
@@ -44,7 +44,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> with SingleTi
   @override
   void initState() {
     super.initState();
-     _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
     _loadProduct();
   }
 
@@ -268,7 +268,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> with SingleTi
                     const SizedBox(
                       height: 10,
                     ),
-                    
                     const SizedBox(
                       height: 20,
                     ),
@@ -318,12 +317,20 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> with SingleTi
                       child: Column(
                         children: [
                           TabBar(
-                            controller: _tabController,
-                            indicatorColor: Colors.red,
-                            tabs: [
-                            Text('Product Details',style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                            Text('Reviews', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                          ]),
+                              controller: _tabController,
+                              indicatorColor: Colors.red,
+                              tabs: [
+                                Text(
+                                  'Product Details',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text('Reviews',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold)),
+                              ]),
                           SizedBox(
                             width: double.infinity,
                             height: 250,
@@ -337,7 +344,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> with SingleTi
                                   child: SingleChildScrollView(
                                     child: Column(
                                       children: [
-                                        Text(style:TextStyle(),"Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).")
+                                        Text(
+                                            style: TextStyle(),
+                                            "Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).Reloaded 1 of 714 libraries in 3 265ms (compile: 27 ms, reload: 1024 ms, reassemble: 2095 ms).Reloaded 1 of 714 libraries in 3 229ms (compile: 24 ms, reload: 1072 ms, reassemble: 2046 ms).")
                                       ],
                                     ),
                                   ),
@@ -348,9 +357,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> with SingleTi
                                   width: double.infinity,
                                   child: SingleChildScrollView(
                                     child: Column(
-                                      children: [
-                                        ReviewCard()
-                                      ],
+                                      children: [ReviewCard()],
                                     ),
                                   ),
                                 )
@@ -360,8 +367,86 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> with SingleTi
                         ],
                       ),
                     ),
-                    const SizedBox(height: 20,),
-                    StoreCard()
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    StoreCard(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 250,
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Similar Product',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: 30,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                        color: primaryColor,
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                    child: Center(
+                                      child: IconButton(
+                                          padding: EdgeInsets.all(0),
+                                          onPressed: () {},
+                                          icon: Icon(
+                                              Icons.chevron_left_outlined,
+                                              color: Colors.white,
+                                              size: 30)),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Container(
+                                    width: 30,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                        color: primaryColor,
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                    child: Center(
+                                      child: IconButton(
+                                          padding: EdgeInsets.all(0),
+                                          onPressed: () {},
+                                          icon: Icon(
+                                              Icons.chevron_right_outlined,
+                                              color: Colors.white,
+                                              size: 30)),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          SizedBox(
+                            height: 200,
+                            width: _size.width,
+                            child: ListView.separated(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: products.length,
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(width: 20),
+                              itemBuilder: (context, index) => ProductCard(
+                                product: products[index],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
