@@ -35,6 +35,10 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
         key: _key,
         endDrawerEnableOpenDragGesture: false,
+<<<<<<< HEAD
+=======
+        endDrawer: MyDrawer(),
+>>>>>>> 992aaa2fc41e2f4dcd74d883dccf487258299ba8
         drawer: MyDrawer(),
         appBar: AppBar(
           leading: SizedBox(
